@@ -1,0 +1,13 @@
+prefix=/Users/dru/git/mapnik-packaging/osx/out/build-cpp11-libcpp-armv7-iphoneos
+exec_prefix=/Users/dru/git/mapnik-packaging/osx/out/build-cpp11-libcpp-armv7-iphoneos
+libdir=/Users/dru/git/mapnik-packaging/osx/out/build-cpp11-libcpp-armv7-iphoneos/lib
+includedir=/Users/dru/git/mapnik-packaging/osx/out/build-cpp11-libcpp-armv7-iphoneos/include
+
+Name: harfbuzz
+Description: HarfBuzz text shaping library
+Version: 1.1.2
+
+Libs: -L${libdir} -lharfbuzz
+Libs.private:   
+Requires.private:  
+Cflags: -I${includedir}/harfbuzz

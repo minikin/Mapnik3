@@ -1,0 +1,11 @@
+prefix=/Users/dru/Downloads/mapnik-packaging-master/osx/out/build-cpp11-libcpp-arm64-iphoneos64
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libtiff
+Description:  Tag Image File Format (TIFF) library.
+Version: 4.0.6
+Libs: -L${libdir} -ltiff
+Libs.private: -ljpeg -lz 
+Cflags: -I${includedir}

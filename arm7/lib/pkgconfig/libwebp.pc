@@ -1,0 +1,11 @@
+prefix=/Users/dru/git/mapnik-packaging/osx/out/build-cpp11-libcpp-armv7-iphoneos
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libwebp
+Description: Library for the WebP graphics format
+Version: 0.5.0
+Cflags: -I${includedir}
+Libs: -L${libdir} -lwebp
+Libs.private: -lm -D_THREAD_SAFE -pthread 

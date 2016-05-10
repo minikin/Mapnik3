@@ -1,0 +1,14 @@
+prefix=/Users/dru/Downloads/mapnik-packaging-master/osx/out/build-cpp11-libcpp-arm64-iphoneos64
+exec_prefix=/Users/dru/Downloads/mapnik-packaging-master/osx/out/build-cpp11-libcpp-arm64-iphoneos64
+libdir=/Users/dru/Downloads/mapnik-packaging-master/osx/out/build-cpp11-libcpp-arm64-iphoneos64/lib
+includedir=/Users/dru/Downloads/mapnik-packaging-master/osx/out/build-cpp11-libcpp-arm64-iphoneos64/include
+
+Name: FreeType 2
+URL: http://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 18.1.12
+Requires:
+Requires.private: zlib
+Libs: -L${libdir} -lfreetype
+Libs.private: 
+Cflags: -I${includedir}/freetype2

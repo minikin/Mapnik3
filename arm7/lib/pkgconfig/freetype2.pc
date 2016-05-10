@@ -1,0 +1,14 @@
+prefix=/Users/dru/git/mapnik-packaging/osx/out/build-cpp11-libcpp-armv7-iphoneos
+exec_prefix=/Users/dru/git/mapnik-packaging/osx/out/build-cpp11-libcpp-armv7-iphoneos
+libdir=/Users/dru/git/mapnik-packaging/osx/out/build-cpp11-libcpp-armv7-iphoneos/lib
+includedir=/Users/dru/git/mapnik-packaging/osx/out/build-cpp11-libcpp-armv7-iphoneos/include
+
+Name: FreeType 2
+URL: http://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 18.1.12
+Requires:
+Requires.private: zlib
+Libs: -L${libdir} -lfreetype
+Libs.private: 
+Cflags: -I${includedir}/freetype2
