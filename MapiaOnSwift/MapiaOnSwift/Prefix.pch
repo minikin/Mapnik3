@@ -1,0 +1,42 @@
+//
+//  Prefix.pch
+//  MapiaOnSwift
+//
+//  Created by Sasha Minikin on 5/10/16.
+//  Copyright © 2016 Sasha Prokhorenko. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_8_0
+#warning "This project uses features only available in iOS SDK 8.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+#if defined __cplusplus
+
+// https://svn.boost.org/trac/boost/ticket/5010
+
+#undef nil
+#undef Nil
+
+#import <mapnik/color.hpp>
+#import <mapnik/image_util.hpp>
+#include <mapnik/agg_renderer.hpp>
+#include <mapnik/datasource_cache.hpp>
+#include <mapnik/datasource.hpp>
+#include <mapnik/map.hpp>
+#include <mapnik/load_map.hpp>
+#include <iostream>
+#include <mapnik/layer.hpp>
+#include <mapnik/config_error.hpp>
+#include <mapnik/font_engine_freetype.hpp>
+
+#define nil __DARWIN_NULL
+#define Nil __DARWIN_NULL
+
+#endif
