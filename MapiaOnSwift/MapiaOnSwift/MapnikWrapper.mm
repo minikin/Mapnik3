@@ -8,7 +8,7 @@
 
 #import "MapnikWrapper.h"
 
-@implementation  MapnikWrapper
+@implementation MapnikWrapper
 
 + (UIImage *)imageWithMapnik:(double)X Y:(double)Y {
   
@@ -60,14 +60,18 @@
                                                  bitsPerComponent, bytesPerRow, colorSpaceRef, bitmapInfo);
     
     CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, buf.width(), buf.height()), iref);
+    
     CGImageRef imageRef = CGBitmapContextCreateImage(context);
+    
     UIImage *image = nil;
+    
     if([UIImage respondsToSelector:@selector(imageWithCGImage:scale:orientation:)]) {
       float scale = [[UIScreen mainScreen] scale];
       image = [UIImage imageWithCGImage:imageRef scale:scale orientation:UIImageOrientationUp];
     } else {
       image = [UIImage imageWithCGImage:imageRef];
     }
+    
     // cleanup
     CGImageRelease(imageRef);
     CGContextRelease(context);

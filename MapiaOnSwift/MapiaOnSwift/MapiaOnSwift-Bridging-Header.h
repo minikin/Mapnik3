@@ -3,3 +3,4 @@
 //
 
 #import "MapnikWrapper.h"
+#import "MapnikTileOverlay.h"

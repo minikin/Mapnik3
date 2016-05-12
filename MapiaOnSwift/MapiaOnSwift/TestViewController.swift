@@ -8,18 +8,14 @@
 
 import UIKit
 
-
 class TestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      let mapImage = MapnikWrapper.imageWithMapnik(640, y: 1136) as UIImage
+      let mapImage = MapnikWrapper.imageWithMapnik(640, y: 1136)
       let imageView = UIImageView(image: mapImage)
       self.view.addSubview(imageView)
       
     }
-
-
-
 }

@@ -37,6 +37,8 @@
 		CE7CF44F1CE3278000EE826D /* libtiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7CF4391CE3278000EE826D /* libtiff.a */; };
 		CE7CF4501CE3278000EE826D /* libturbojpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7CF43A1CE3278000EE826D /* libturbojpeg.a */; };
 		CE7CF4511CE3278000EE826D /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7CF43B1CE3278000EE826D /* libwebp.a */; };
+		CED328101CE51259006B31BF /* MapnikTileOverlay.mm in Sources */ = {isa = PBXBuildFile; fileRef = CED3280F1CE51259006B31BF /* MapnikTileOverlay.mm */; };
+		CED328121CE51CE6006B31BF /* Kiev.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CED328111CE51CE6006B31BF /* Kiev.gpx */; };
 		CEDC6B851CE2691400DAD2B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC6B841CE2691400DAD2B3 /* AppDelegate.swift */; };
 		CEDC6B8A1CE2691400DAD2B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDC6B881CE2691400DAD2B3 /* Main.storyboard */; };
 		CEDC6B8C1CE2691400DAD2B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEDC6B8B1CE2691400DAD2B3 /* Assets.xcassets */; };
@@ -80,6 +82,9 @@
 		CE7CF4391CE3278000EE826D /* libtiff.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtiff.a; path = ../../fat/lib/libtiff.a; sourceTree = "<group>"; };
 		CE7CF43A1CE3278000EE826D /* libturbojpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libturbojpeg.a; path = ../../fat/lib/libturbojpeg.a; sourceTree = "<group>"; };
 		CE7CF43B1CE3278000EE826D /* libwebp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwebp.a; path = ../../fat/lib/libwebp.a; sourceTree = "<group>"; };
+		CED3280E1CE51259006B31BF /* MapnikTileOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapnikTileOverlay.h; sourceTree = "<group>"; };
+		CED3280F1CE51259006B31BF /* MapnikTileOverlay.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MapnikTileOverlay.mm; sourceTree = "<group>"; };
+		CED328111CE51CE6006B31BF /* Kiev.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Kiev.gpx; sourceTree = "<group>"; };
 		CEDC6B811CE2691400DAD2B3 /* MapiaOnSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapiaOnSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDC6B841CE2691400DAD2B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEDC6B891CE2691400DAD2B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -212,6 +217,8 @@
 			children = (
 				CE0243671CE27154009C718F /* MapnikWrapper.h */,
 				CE0243681CE27154009C718F /* MapnikWrapper.mm */,
+				CED3280E1CE51259006B31BF /* MapnikTileOverlay.h */,
+				CED3280F1CE51259006B31BF /* MapnikTileOverlay.mm */,
 			);
 			name = Mapnik;
 			sourceTree = "<group>";
@@ -219,6 +226,7 @@
 		CEDC6BC91CE26B2900DAD2B3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				CED328111CE51CE6006B31BF /* Kiev.gpx */,
 				CEDC6B841CE2691400DAD2B3 /* AppDelegate.swift */,
 				CEDC6B901CE2691400DAD2B3 /* Info.plist */,
 				CEDC6BC51CE26AFE00DAD2B3 /* MapiaOnSwift-Bridging-Header.h */,
@@ -305,6 +313,7 @@
 			files = (
 				CE0243711CE2748C009C718F /* buildings.dbf in Resources */,
 				CEED7FEA1CE323840035DC1B /* style.xml in Resources */,
+				CED328121CE51CE6006B31BF /* Kiev.gpx in Resources */,
 				CEDC6B8F1CE2691400DAD2B3 /* LaunchScreen.storyboard in Resources */,
 				CEDC6B8C1CE2691400DAD2B3 /* Assets.xcassets in Resources */,
 				CE0243731CE2748C009C718F /* buildings.shp in Resources */,
@@ -327,6 +336,7 @@
 				CE599ECE1CE483AF0092C871 /* MapiaTileOverlay.swift in Sources */,
 				CE0243761CE27836009C718F /* TestViewController.swift in Sources */,
 				CEED7FD81CE316F60035DC1B /* MapnikWrapper.mm in Sources */,
+				CED328101CE51259006B31BF /* MapnikTileOverlay.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

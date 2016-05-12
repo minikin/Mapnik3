@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Test View Controller-->
+        <!--Mapia View Controller-->
         <scene sceneID="cS8-MC-wlR">
             <objects>
-                <viewController id="URX-cU-O6u" customClass="TestViewController" customModule="MapiaOnSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="URX-cU-O6u" customClass="MapiaViewController" customModule="MapiaOnSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qCy-bk-D1N"/>
                         <viewControllerLayoutGuide type="bottom" id="jsq-vm-UaW"/>
@@ -16,8 +16,22 @@
                     <view key="view" contentMode="scaleToFill" id="Zz0-J7-J2Q">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Ie-fK-sc7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Ie-fK-sc7" firstAttribute="leading" secondItem="Zz0-J7-J2Q" secondAttribute="leading" id="1Of-0h-DfZ"/>
+                            <constraint firstAttribute="trailing" secondItem="7Ie-fK-sc7" secondAttribute="trailing" id="IFe-Tm-G4Q"/>
+                            <constraint firstItem="7Ie-fK-sc7" firstAttribute="bottom" secondItem="jsq-vm-UaW" secondAttribute="top" id="PYF-Xw-Les"/>
+                            <constraint firstItem="7Ie-fK-sc7" firstAttribute="top" secondItem="Zz0-J7-J2Q" secondAttribute="top" id="Q7t-81-HjH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="7Ie-fK-sc7" id="5TY-h2-fhd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEn-7y-wf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
