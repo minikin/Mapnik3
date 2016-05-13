@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) NSString *style;
 
-//-(id)initWithStyle: (NSURL*)styleFile;
++(MapnikTileOverlay *)sharedMapnikTileOverlay;
 -(NSData*)renderTileForPath:(MKTileOverlayPath)path;
 
 @end

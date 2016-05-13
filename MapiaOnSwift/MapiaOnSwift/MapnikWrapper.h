@@ -15,5 +15,6 @@
 // Mapnik to UIImage
 
 + (UIImage *)imageWithMapnik:(double)X Y:(double)Y;
+//-(id)initWithStyle: (NSURL*)styleFile;
 
 @end

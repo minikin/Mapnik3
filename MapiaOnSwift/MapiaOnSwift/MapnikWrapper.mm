@@ -90,6 +90,22 @@
     return nil;
   }
   
+  //-(id)initWithStyle: (NSURL*)styleFile {
+  //
+  //  self = [self init];
+  //
+  //  if (self) {
+  //
+  //    NSError *error;
+  //    NSString *styleContent = [NSString stringWithContentsOfURL:styleFile encoding:NSUTF8StringEncoding error:&error];
+  //    self.style = [styleContent stringByReplacingOccurrencesOfString:@"RESOURCE_PATH" withString:[NSBundle mainBundle].resourcePath];
+  //  }
+  //
+  //  return self;
+  //  
+  //}
+
+
 }
 
 @end

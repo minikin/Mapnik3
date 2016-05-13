@@ -19,7 +19,8 @@ class MapiaTileOverlay: MKTileOverlay {
   
   let earthRadius = 6378137.0
   let cache = NSCache()
-  let mapnik = MapnikTileOverlay()
+  let mapnik = MapnikTileOverlay.sharedMapnikTileOverlay()
+  var queue = NSOperationQueue()
   
   override func loadTileAtPath(path: MKTileOverlayPath, result: (NSData?, NSError?) -> Void) {
     
@@ -39,11 +40,16 @@ class MapiaTileOverlay: MKTileOverlay {
 //    let image = UIImage(named:"earth")
 //    let imageData = UIImagePNGRepresentation(image!)
 
-    let imageData = mapnik.renderTileForPath(path)
+    queue = NSOperationQueue()
+    queue.addOperationWithBlock { () -> Void in
+      
+      let imageData = self.mapnik.renderTileForPath(path)
+      
+      NSOperationQueue.mainQueue().addOperationWithBlock({
+        result(imageData, nil)
+      })
     
-    print(imageData)
-    
-    result(imageData, nil)
+    }
   }
   
   
@@ -89,8 +95,5 @@ class MapiaTileOverlay: MKTileOverlay {
 //      task.resume()
 //    }
 //  }
-  
-  
-
   
 }

@@ -26,9 +26,14 @@ class MapiaViewController: UIViewController, MKMapViewDelegate {
   
   func reloadTileOverlay() {
     
-    let overlay = MapiaTileOverlay(URLTemplate: "http://mt0.google.com/vt/x={x}&y={y}&z={z}")    
-    overlay.canReplaceMapContent = true
-    mapView.addOverlay(overlay)
+    let tileOverlay = MapiaTileOverlay(URLTemplate: "http://mt0.google.com/vt/x={x}&y={y}&z={z}")
+    tileOverlay.canReplaceMapContent = true
+    
+    if tileOverlay == true {
+      mapView.removeOverlay(tileOverlay)
+    }
+    
+    mapView.addOverlay(tileOverlay)
   }
 
   

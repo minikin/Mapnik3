@@ -14,20 +14,18 @@
 
 @implementation MapnikTileOverlay
 
-//-(id)initWithStyle: (NSURL*)styleFile {
-//  
-//  self = [self init];
-//  
-//  if (self) {
-//    
-//    NSError *error;
-//    NSString *styleContent = [NSString stringWithContentsOfURL:styleFile encoding:NSUTF8StringEncoding error:&error];
-//    self.style = [styleContent stringByReplacingOccurrencesOfString:@"RESOURCE_PATH" withString:[NSBundle mainBundle].resourcePath];
-//  }
-//  
-//  return self;
-//  
-//}
+#pragma mark Singleton Methods
+
++(MapnikTileOverlay *)sharedMapnikTileOverlay {
+  
+  static MapnikTileOverlay *sharedMapnik = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    sharedMapnik = [[self alloc] init];
+  });
+  
+  return sharedMapnik;
+}
 
 -(NSData*)renderTileForPath:(MKTileOverlayPath)path {
   
@@ -48,7 +46,7 @@
     
     mapnik::agg_renderer <mapnik::image_rgba8> ren(m,im);
     ren.apply();
-    
+  
     size_t im_size = im.width() * im.height();
     size_t bitsPerComponent = 8;
     size_t bitsPerPixel = 32;
@@ -88,7 +86,6 @@
     CGDataProviderRelease(provider);
     
     return  UIImagePNGRepresentation(image);
-    
     
   } catch (std::exception const& ex) {
     
