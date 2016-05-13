@@ -9,7 +9,6 @@
 import Foundation
 import MapKit
 
-
 class MapiaTileOverlay: MKTileOverlay {
   
   let session: NSURLSession = {
@@ -18,7 +17,7 @@ class MapiaTileOverlay: MKTileOverlay {
   }()
   
   let earthRadius = 6378137.0
-  let cache = NSCache()
+//  let cache = NSCache()
   let mapnik = MapnikTileOverlay.sharedMapnikTileOverlay()
   var queue = NSOperationQueue()
   

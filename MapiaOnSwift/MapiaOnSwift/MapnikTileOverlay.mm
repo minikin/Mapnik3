@@ -14,7 +14,7 @@
 
 @implementation MapnikTileOverlay
 
-#pragma mark Singleton Methods
+#pragma mark singleton 
 
 +(MapnikTileOverlay *)sharedMapnikTileOverlay {
   
