@@ -13,6 +13,7 @@
 		CE0243731CE2748C009C718F /* buildings.shp in Resources */ = {isa = PBXBuildFile; fileRef = CE02436E1CE2748C009C718F /* buildings.shp */; };
 		CE0243741CE2748C009C718F /* buildings.shx in Resources */ = {isa = PBXBuildFile; fileRef = CE02436F1CE2748C009C718F /* buildings.shx */; };
 		CE0243761CE27836009C718F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0243751CE27836009C718F /* TestViewController.swift */; };
+		CE46BD5A1CE675EE000F00C0 /* CacheSaveHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46BD591CE675EE000F00C0 /* CacheSaveHelper.swift */; };
 		CE599ECE1CE483AF0092C871 /* MapiaTileOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE599ECD1CE483AF0092C871 /* MapiaTileOverlay.swift */; };
 		CE599ED01CE48A970092C871 /* MapiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE599ECF1CE48A970092C871 /* MapiaViewController.swift */; };
 		CE7CF43C1CE3278000EE826D /* libboost_filesystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7CF4261CE3278000EE826D /* libboost_filesystem.a */; };
@@ -59,6 +60,7 @@
 		CE02436E1CE2748C009C718F /* buildings.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = buildings.shp; sourceTree = "<group>"; };
 		CE02436F1CE2748C009C718F /* buildings.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = buildings.shx; sourceTree = "<group>"; };
 		CE0243751CE27836009C718F /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		CE46BD591CE675EE000F00C0 /* CacheSaveHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheSaveHelper.swift; sourceTree = "<group>"; };
 		CE599ECD1CE483AF0092C871 /* MapiaTileOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapiaTileOverlay.swift; sourceTree = "<group>"; };
 		CE599ECF1CE48A970092C871 /* MapiaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapiaViewController.swift; sourceTree = "<group>"; };
 		CE7CF4261CE3278000EE826D /* libboost_filesystem.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_filesystem.a; path = ../../fat/lib/libboost_filesystem.a; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				CE599ECD1CE483AF0092C871 /* MapiaTileOverlay.swift */,
+				CE46BD591CE675EE000F00C0 /* CacheSaveHelper.swift */,
 			);
 			name = DataProviders;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				CE0243761CE27836009C718F /* TestViewController.swift in Sources */,
 				CEED7FD81CE316F60035DC1B /* MapnikWrapper.mm in Sources */,
 				CED328101CE51259006B31BF /* MapnikTileOverlay.mm in Sources */,
+				CE46BD5A1CE675EE000F00C0 /* CacheSaveHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

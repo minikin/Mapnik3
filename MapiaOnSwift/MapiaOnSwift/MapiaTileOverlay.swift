@@ -17,42 +17,53 @@ class MapiaTileOverlay: MKTileOverlay {
   }()
   
   let earthRadius = 6378137.0
-//  let cache = NSCache()
   let mapnik = MapnikTileOverlay.sharedMapnikTileOverlay()
   var queue = NSOperationQueue()
   
   override func loadTileAtPath(path: MKTileOverlayPath, result: (NSData?, NSError?) -> Void) {
     
-//    let earthDiameter = earthRadius * M_PI
-//    let earthCircumference = earthDiameter * M_PI
-//    let maxRes = earthCircumference / 256
-//    let originShift = earthCircumference / 2
-//    
-//    let total = 1 << path.z
-//    let resolution = maxRes / Double(total)
+    let file = FileSaveHelper(fileName: "\(path)", fileExtension: .MAPIA, subDirectory: "mapiaCache", directory: .DocumentDirectory)
     
-//    let minx = Double((path.x * 256)) * resolution - originShift
-//    let miny = Double(-((path.y) * 256)) * resolution + originShift
-//    let maxx = Double(((path.x) * 256)) * resolution - originShift
-//    let maxy = -(Double((path.y * 256)) * resolution - originShift)
+    do {
+      
+      if let cache = try file.getCacheData() {
+        
+        result(cache, nil)
+        
+      } else {
+        
+        queue = NSOperationQueue()
+        queue.addOperationWithBlock { () -> Void in
+          
+          let imageData = self.mapnik.renderTileForPath(path)
+          
+          do {
+            
+            try file.saveDataToCache(imageData)
+             
+          } catch {
+            
+            print("There was an error saving the file: \(error)")
+          }
+          
+          NSOperationQueue.mainQueue().addOperationWithBlock({
+            result(imageData, nil)
+          })
+        }
     
-//    let image = UIImage(named:"earth")
-//    let imageData = UIImagePNGRepresentation(image!)
+      }
 
-    queue = NSOperationQueue()
-    queue.addOperationWithBlock { () -> Void in
+    } catch {
       
-      let imageData = self.mapnik.renderTileForPath(path)
+      print("There was an error getting the file: \(error)")
       
-      NSOperationQueue.mainQueue().addOperationWithBlock({
-        result(imageData, nil)
-      })
-    
     }
+    
   }
   
   
   // MARK: - Helpers
+  
   
 //  - (double) y2lat_m:(double) y {
 //  return rad2deg(2 * atan(exp( (y / earth_radius ) )) - M_PI/2);
@@ -66,6 +77,8 @@ class MapiaTileOverlay: MKTileOverlay {
 //  override func URLForTilePath(path: MKTileOverlayPath) -> NSURL {
 //    return NSURL(string: String(format: "http://mt0.google.com/vt/x={x}&y={y}&z={z}", path.z, path.x, path.y))!
 //  }
+
+  
   
 //  override func loadTileAtPath(path: MKTileOverlayPath, result: (NSData?, NSError?) -> Void) {
 //    
@@ -94,5 +107,21 @@ class MapiaTileOverlay: MKTileOverlay {
 //      task.resume()
 //    }
 //  }
+  
+//    let earthDiameter = earthRadius * M_PI
+//    let earthCircumference = earthDiameter * M_PI
+//    let maxRes = earthCircumference / 256
+//    let originShift = earthCircumference / 2
+//
+//    let total = 1 << path.z
+//    let resolution = maxRes / Double(total)
+
+//    let minx = Double((path.x * 256)) * resolution - originShift
+//    let miny = Double(-((path.y) * 256)) * resolution + originShift
+//    let maxx = Double(((path.x) * 256)) * resolution - originShift
+//    let maxy = -(Double((path.y * 256)) * resolution - originShift)
+
+//    let image = UIImage(named:"earth")
+//    let imageData = UIImagePNGRepresentation(image!)
   
 }
